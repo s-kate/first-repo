@@ -12,7 +12,6 @@ for l1 in secret_word:
     guessed_letters += '*'
 
 while number_of_attempts != 0:
-    number_of_attempts -= 1
     user_suppose = input('Enter your suppose: ')
 
     if len(user_suppose) == 1:
@@ -27,6 +26,7 @@ while number_of_attempts != 0:
                 final_word = ''.join(guessed_letters)
 
             elif secret_word[-1] == letter and letter != user_suppose:
+                number_of_attempts -= 1
                 print('Try again!')
                 break
 
@@ -37,4 +37,5 @@ while number_of_attempts != 0:
             print('Congratulations, you are right!')
             break
         else:
+            number_of_attempts -= 1
             print('Try again!')
